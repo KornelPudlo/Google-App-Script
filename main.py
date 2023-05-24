@@ -1,14 +1,14 @@
-// Hello World
-This Google App Script creates a dedicated ribbon tab in Google Sheets with several buttons that can be used to 
-  - show cell content
-  - unhide dedicated tab
-  - redirect user to dedicated, external website
- What is more, it is assigned to a manually created button that:
-  - create a copy of a file and open it for user hence no need to use master version or create a copy manually
-  - once copy created, it unhides dedicated hidden tab
-  - stores a copy in dedicated Google Drive folder 
+# Hello World
+# This Google App Script creates a dedicated ribbon tab in Google Sheets with several buttons that can be used to 
+#   - show cell content
+#   - unhide dedicated tab
+#   - redirect user to dedicated, external website
+#  What is more, it is assigned to a manually created button that:
+#   - create a copy of a file and open it for user hence no need to use master version or create a copy manually
+#   - once copy created, it unhides dedicated hidden tab
+#   - stores a copy in dedicated Google Drive folder 
   
-  Feel free to use it but note that it will not be maintained anymore hence there might be some errors with it :) 
+#   Feel free to use it but note that it will not be maintained anymore hence there might be some errors with it :) 
   
   
 
@@ -33,7 +33,7 @@ function showContent() {
 }
 
 function goToTab() {
-  createCopyOfSheetAndOpen(); // Call the function to create a copy and open it
+  createCopyOfSheetAndOpen(); #Call the function to create a copy and open it
 }
 
 function openManual() {
@@ -47,7 +47,7 @@ function createCopyOfSheetAndOpen() {
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   var originalSheet = spreadsheet.getId();
   var originalName = spreadsheet.getName();
-  var destinationFolderId = "google drive folder ID here"; // Replace with the destination folder ID where the copy will be saved
+  var destinationFolderId = "google drive folder ID here";  #Replace with the destination folder ID where the copy will be saved
   
   var file = DriveApp.getFileById(originalSheet);
   var destinationFolder = DriveApp.getFolderById(destinationFolderId);
