@@ -1,0 +1,35 @@
+# Hello World 
+Below code create a script that sends an email notification everytime when cell in column C named 'Stage' changes to 'Send'. 
+Script sends an email to the email address mentioned in column 'D' called 'Email'. 
+
+Feel free to use it and let me know in case of any questions. 
+
+function createOnEditTrigger() {
+  var ss = SpreadsheetApp.getActive();
+  ScriptApp.newTrigger('sendNotificationEmail')
+    .forSpreadsheet(ss)
+    .onEdit()
+    .create();
+}
+
+function sendNotificationEmail(e) {
+  var sheet = e.range.getSheet();
+  var rowIndex = e.range.getRow();
+  var colIndex = e.range.getColumn();
+
+  var subject = 'TEST - please ignore';
+  var stageColumn = 3; // Column C
+  var emailColumn = 4; // Column D
+
+  // Check if the edit is in the stage column (C) and if the value is 'Send'
+  if (colIndex === stageColumn && sheet.getRange(rowIndex, stageColumn).getValue() === 'Send') {
+    var email = sheet.getRange(rowIndex, emailColumn).getValue().toString().trim();
+
+    if (email !== '') {
+      var message = 'Hello,\n\nPlease ignore this message as it is just a test .\n\nBest regards,\
+      Kornel';
+      MailApp.sendEmail(email, subject, message);
+    }
+  }
+}
+
