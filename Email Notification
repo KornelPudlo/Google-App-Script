@@ -1,8 +1,8 @@
 # Hello World 
-Below code create a script that sends an email notification everytime when cell in column C named 'Stage' changes to 'Send'. 
-Script sends an email to the email address mentioned in column 'D' called 'Email'. 
+#Below code create a script that sends an email notification everytime when cell in column C named 'Stage' changes to 'Send'. 
+#Script sends an email to the email address mentioned in column 'D' called 'Email'. 
 
-Feel free to use it and let me know in case of any questions. 
+#Feel free to use it and let me know in case of any questions. 
 
 function createOnEditTrigger() {
   var ss = SpreadsheetApp.getActive();
