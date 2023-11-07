@@ -1,0 +1,15 @@
+# This code in Java Script creates a new ribbon in Google Sheets file with dedicated name, pop-up window and redirect user to the Rickroll video on YT.
+
+function onOpen() {
+  var ui = SpreadsheetApp.getUi();
+  ui.createMenu('Name of the ribbon')
+    .addItem('Name of the Button1', 'openManual')
+    .addToUi();
+}
+
+function openManual() {
+  var htmlOutput = HtmlService.createHtmlOutput('<a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank">Continue</a>')
+      .setWidth(300)
+      .setHeight(50);
+  SpreadsheetApp.getUi().showModalDialog(htmlOutput, 'Name of the Button1');
+}
